@@ -1,0 +1,31 @@
+[package]
+name = "starttls-flows"
+description = "Safe I/O-free implementation of the opportunistic TLS extension"
+version = "0.1.0"
+authors = ["soywod <clement.douin@posteo.net>"]
+edition = "2021"
+license = "MIT"
+categories = []
+keywords = ["starttls", "flow", "io-free", "imap", "tcp"]
+homepage = "https://pimalaya.org"
+documentation = "https://docs.rs/starttls-flows/latest/starttls_flows"
+repository = "https://github.com/pimalaya/starttls"
+
+[package.metadata.docs.rs]
+all-features = true
+rustdoc-args = ["--cfg", "docsrs"]
+
+[dev-dependencies]
+env_logger = "0.11"
+native-tls = "0.2"
+rustls = "0.23"
+rustls-platform-verifier = "0.5"
+stream-flows = { version = "0.1", features = ["std"] }
+
+[dependencies]
+log = "0.4"
+memchr = "2.7.4"
+stream-flows = { version = "0.1", default-features = false }
+
+[patch.crates-io]
+stream-flows.git = "https://github.com/pimalaya/stream"
